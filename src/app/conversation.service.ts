@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ConversationService {
-  private conversationUrl = "http://localhost:3000/api/v1/conversations/";
+  private conversationUrl = "https://petmaluapp-api.herokuapp.com/api/v1/conversations/";
 
   constructor(private router: Router, private http: Http) {}
 
@@ -46,7 +46,7 @@ export class ConversationService {
     let options = new RequestOptions({ headers: headers });
     let token = localStorage.getItem("token");
     const url = this.conversationUrl + 'send';
-    
+
     return this.http.post(url, {conversation_id, content, token}, options)
                     .map(this.extractData)
                     .catch(this.handleError)

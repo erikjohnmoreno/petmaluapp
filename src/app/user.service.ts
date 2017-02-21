@@ -10,7 +10,7 @@ import { User } from './user';
 
 @Injectable()
 export class UserService {
-  private userUrl = "http://localhost:3000/api/v1/users";
+  private userUrl = "https://petmaluapp-api.herokuapp.com/api/v1/users";
 
   constructor(private router: Router, private http: Http) {}
 
@@ -37,7 +37,7 @@ export class UserService {
   login(email: string, password: string) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    const url = "http://localhost:3000/api/v1/users/login";
+    const url = "https://petmaluapp-api.herokuapp.com/api/v1/users/login";
 
     return this.http.post(url, {email, password}, options)
                     .map((res: Response) => {
