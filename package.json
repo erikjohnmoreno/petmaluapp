@@ -11,10 +11,6 @@
     "e2e": "protractor",
     "postinstall": "ng build --aot -prod"
   },
-  "engines": {
-    "node": "7.5.0",
-    "npm": "4.1.2"
-  },
   "private": true,
   "dependencies": {
     "angular-cli": "1.0.0-beta.28.3",
