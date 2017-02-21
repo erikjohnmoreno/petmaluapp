@@ -1,3 +1,27 @@
-<h1>
-  {{title}}
-</h1>
+<body class="well">
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a routerLink="/dashboard" class="navbar-brand">Malupet na app!</a>
+      </div>
+
+      <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li *ngIf="!isLoggedIn">
+            <a routerLink="/login">Login</a>
+          </li>
+          <li *ngIf="!isLoggedIn">
+            <a routerLink="/signup">Signup</a>
+          </li>
+          <li *ngIf="isLoggedIn">
+            <a routerLink="/compose">Compose Message</a>
+          </li>
+          <li *ngIf="isLoggedIn">
+            <a (click)="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</body>

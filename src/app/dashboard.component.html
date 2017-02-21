@@ -1,0 +1,21 @@
+<div class="tab-content">
+  <div class="tab-pane active" id="inbox">
+      <div class="container">
+           <div class="content-container clearfix">
+               <div class="col-md-12">
+                   <h1 class="content-title">Inbox</h1>
+
+                   <!-- <input type="search" placeholder="Search Mail" class="form-control mail-search" /> -->
+                   <ul class="mail-list">
+                       <li *ngFor="let conversation of conversations">
+                           <a href="" [routerLink]="['/conversation', conversation.id]">
+                               <span class="mail-sender">{{ conversation.user.email}}</span>
+                               <span class="mail-subject">{{ conversation.subject }}</span>
+                           </a>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+  </div>
+</div>

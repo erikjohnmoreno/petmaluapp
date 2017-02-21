@@ -1,0 +1,12 @@
+<div *ngIf="conversation">
+  <h2>subject: {{ conversation.subject }}</h2>
+  <li *ngFor="let message of conversation.messages">
+    sender:
+      <label *ngIf="message.user_id == conversation.user_id">{{ conversation.user.email }}</label>
+      <label *ngIf="message.user_id == conversation.receiver_id">{{ conversation.receiver.email }}</label>
+    content: {{ message.content }}
+  </li>
+
+  <textarea #content name="name" rows="8" cols="80" class="form-control"></textarea>
+  <button type="button" name="button" (click)="sendMessage(content.value)">Send</button>
+</div>
